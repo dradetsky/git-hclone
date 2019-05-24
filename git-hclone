@@ -10,10 +10,17 @@
 #
 # git@github.com:raml-org/raml-examples.git
 
+hclone_url() {
+    web_url=$1
+    hclone_base=$(echo $web_url |
+                      sed "s/.*\/\///" |
+                      sed "s/\//:/" |
+                      sed -E "s/\/([^\/]+)\/.*/\/\1/")
+    echo "git@${hclone_base}.git"
+}
+
 web_url=$1
 
-x=${web_url:19}
-
-git_url="git@github.com:${x}.git"
+git_url=$(hclone_url $web_url)
 
 git clone $git_url
