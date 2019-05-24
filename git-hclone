@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# git-hclone 
+#
+# I want to git clone a rep with web url
+#
+# https://github.com/raml-org/raml-examples
+#
+# but the address of the repo is actually
+#
+# git@github.com:raml-org/raml-examples.git
+
+web_url=$1
+
+x=${web_url:19}
+
+git_url="git@github.com:${x}.git"
+
+git clone $git_url
