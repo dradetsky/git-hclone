@@ -10,9 +10,6 @@ usage
 
 `git hclone https://github.com/raml-org/raml-examples`
 
-future work
------------
+or
 
-should be able to get same result via
-
-`git hclone https://bitbucket.org/jdubray/star-javascript/src/default/`
+`git hclone https://bitbucket.org/ngunatillaka/leaderless-byzantine-paxos/src/master/`
